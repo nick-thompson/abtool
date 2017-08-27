@@ -12,9 +12,28 @@
   justify-content: center;
   align-items: center;
   max-width: 960px;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   height: 80%;
   margin: 0px auto;
+}
+
+.HeaderNoMargin {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.TextBody {
+  max-width: 50%;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .TextBody {
+    max-width: 100%;
+  }
 }
 
 .DropCellContainer {

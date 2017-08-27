@@ -138,9 +138,9 @@ class App extends Component {
       <div className="App">
         <div className="MainContainer">
           <div className="TextContainer">
-            <h1>Online Audio</h1>
-            <h1>A|B Reference Tool</h1>
-            <p>
+            <h1 className="HeaderNoMargin">Online Audio</h1>
+            <h1 className="HeaderNoMargin">A|B Reference Tool</h1>
+            <p className="TextBody">
               A/B referencing plays an essential part in production, mixing and mastering, BNCE offers a faster, easier and more accurate method to compare multiple audio files. 
             </p>
           </div>
