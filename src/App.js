@@ -29,9 +29,13 @@ class App extends Component {
     audio.addEventListener('timeupdate', this._onTimeUpdate);
     audio.addEventListener('ended', this._onReset);
 
+    if (this.state.rightAudio)
+      this.state.rightAudio.muted = true;
+
     this.setState({
       leftFileName: name,
       leftAudio: audio,
+      leftSelected: true,
     });
   };
 
@@ -44,9 +48,13 @@ class App extends Component {
     audio.addEventListener('timeupdate', this._onTimeUpdate);
     audio.addEventListener('ended', this._onReset);
 
+    if (this.state.leftAudio)
+      this.state.leftAudio.muted = true;
+
     this.setState({
       rightFileName: name,
       rightAudio: audio,
+      rightSelected: true,
     });
   };
 
