@@ -46,18 +46,31 @@
   display: flex;
 }
 
-.AppBnceAd {
-  background-image: url('/bnce-ad.png');
+.AppFooterAd {
   background-size: cover;
   background-position: center center;
+  display: flex;
   flex: 1;
   height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.AppFooterText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 16%;
+}
+
+.AppFooterInvertedText {
+  color: #e7e7df;
+}
+
+.AppBnceAd {
+  background-image: url('/bnce-ad.png');
 }
 
 .AppCIAd {
   background-image: url('/temper-ad.png');
-  background-size: cover;
-  background-position: center center;
-  flex: 1;
-  height: 100%;
 }

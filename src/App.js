@@ -161,11 +161,17 @@ class App extends Component {
             fillAmount={this.state.transportProgress} />
         </div>
         <div className="AppFooter">
-          <div className="AppBnceAd">
-            swag
+          <div className="AppFooterAd AppBnceAd">
+            <div className="AppFooterText">
+              <h2 className="HeaderNoMargin">BNCE Platform</h2>
+              <h5 className="HeaderNoMargin">Designed for music creators.</h5>
+            </div>
           </div>
-          <div className="AppCIAd">
-            swag
+          <div className="AppFooterAd AppCIAd">
+            <div className="AppFooterText AppFooterInvertedText">
+              <h2 className="HeaderNoMargin">Temper</h2>
+              <h5 className="HeaderNoMargin">New Phase Distortion Plugin</h5>
+            </div>
           </div>
         </div>
       </div>
