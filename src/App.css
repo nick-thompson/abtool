@@ -85,9 +85,15 @@
   flex-direction: column;
   align-items: center;
   margin-right: 16%;
+  text-decoration: none;
 }
 
-.AppFooterInvertedText {
+.AppFooterText:visited {
+  color: inherit;
+}
+
+.AppFooterInvertedText,
+.AppFooterInvertedText:visited {
   color: #f5f5f5;
 }
 
