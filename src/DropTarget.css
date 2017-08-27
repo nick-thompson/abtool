@@ -2,10 +2,11 @@
   background-image: url('/ABackground.png');
   background-size: cover;
   background-position: center center;
-  width: 426px;
+  display: flex;
+  flex: 1;
   height: 149px;
   margin-right: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .DropTargetContainer:last-child {

@@ -137,6 +137,13 @@ class App extends Component {
     return (
       <div className="App">
         <div className="MainContainer">
+          <div className="TextContainer">
+            <h1>Online Audio</h1>
+            <h1>A|B Reference Tool</h1>
+            <p>
+              A/B referencing plays an essential part in production, mixing and mastering, BNCE offers a faster, easier and more accurate method to compare multiple audio files. 
+            </p>
+          </div>
           <div className="DropCellContainer">
             <DropTarget
               trackName={this.state.leftFileName}
@@ -151,6 +158,14 @@ class App extends Component {
             onReset={this._onReset}
             onPlayPause={this._onPlayPause}
             fillAmount={this.state.transportProgress} />
+        </div>
+        <div className="AppFooter">
+          <div className="AppBnceAd">
+            swag
+          </div>
+          <div className="AppCIAd">
+            swag
+          </div>
         </div>
       </div>
     );

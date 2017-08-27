@@ -3,17 +3,42 @@
   background-image: url('/Background.jpg');
   background-size: cover;
   background-position: center center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100%;
 }
 
 .MainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 960px;
+  padding: 20px;
+  height: 80%;
+  margin: 0px auto;
 }
 
 .DropCellContainer {
   display: flex;
+  width: 100%;
+}
+
+.AppFooter {
+  height: 20%;
+  display: flex;
+}
+
+.AppBnceAd {
+  background-image: url('/bnce-ad.png');
+  background-size: cover;
+  background-position: center center;
+  flex: 1;
+  height: 100%;
+}
+
+.AppCIAd {
+  background-image: url('/temper-ad.png');
+  background-size: cover;
+  background-position: center center;
+  flex: 1;
+  height: 100%;
 }
