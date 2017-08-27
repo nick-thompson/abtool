@@ -61,6 +61,25 @@ class App extends Component {
     });
   };
 
+  _onSeek = (amt) => {
+    const {leftAudio, rightAudio} = this.state;
+    const shouldSkip = leftAudio !== null &&
+      rightAudio !== null &&
+      leftAudio.duration !== rightAudio.duration;
+
+    if (!shouldSkip) {
+      const duration = leftAudio.duration;
+      const seekPoint = amt * duration;
+
+      leftAudio.currentTime = seekPoint;
+      rightAudio.currentTime = seekPoint;
+
+      this.setState({
+        transportProgress: amt,
+      });
+    }
+  };
+
   _onPlayPause = () => {
     if (this.state.playing) {
       this.state.leftAudio.pause();
@@ -92,6 +111,7 @@ class App extends Component {
           </div>
           <Transport
             playing={this.state.playing}
+            onSeek={this._onSeek}
             onReset={this._onReset}
             onPlayPause={this._onPlayPause}
             fillAmount={this.state.transportProgress} />
