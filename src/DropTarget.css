@@ -2,5 +2,10 @@
   background-color: #eaeaea;
   width: 200px;
   height: 200px;
-  margin: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.DropTargetContainer:last-child {
+  margin-right: 0;
 }

@@ -81,12 +81,18 @@ class App extends Component {
   };
 
   _onPlayPause = () => {
+    const {leftAudio, rightAudio} = this.state;
+
+    if (leftAudio === null && rightAudio === null) {
+      return;
+    }
+
     if (this.state.playing) {
-      this.state.leftAudio.pause();
-      this.state.rightAudio.pause();
+      leftAudio && leftAudio.pause();
+      rightAudio && rightAudio.pause();
     } else {
-      this.state.leftAudio.play();
-      this.state.rightAudio.play();
+      leftAudio && leftAudio.play();
+      rightAudio && rightAudio.play();
     }
 
     this.setState({
@@ -95,6 +101,21 @@ class App extends Component {
   };
 
   _onReset = () => {
+    const {leftAudio, rightAudio} = this.state;
+
+    if (leftAudio === null && rightAudio === null) {
+      return;
+    }
+
+    if (this.state.playing) {
+      leftAudio.pause();
+      rightAudio.pause();
+    }
+
+    this.setState({
+      playing: false,
+      transportProgress: 0,
+    });
   };
 
   render() {
