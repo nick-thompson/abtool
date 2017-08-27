@@ -136,6 +136,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="AppHeader">
+          <a href="/">
+            <img className="AppLogo" src="/logo.png" alt="BNCE Platform" />
+          </a>
+          <a className="AppLaunch" href="http://www.bnceplatform.com">
+            Launch with us
+          </a>
+        </div>
         <div className="MainContainer">
           <div className="TextContainer">
             <h1 className="HeaderNoMargin">Online Audio</h1>

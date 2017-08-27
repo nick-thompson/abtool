@@ -6,6 +6,30 @@
   height: 100%;
 }
 
+.AppHeader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 20px 40px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AppLogo {
+  height: 40px;
+}
+
+.AppLaunch {
+  color: #f5f5f5;
+  text-decoration: none;
+  padding: 8px 12px;
+  background-color: #985c5c;
+  border-radius: 12px;
+}
+
 .MainContainer {
   display: flex;
   flex-direction: column;
