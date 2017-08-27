@@ -36,6 +36,21 @@ class DropTarget extends Component {
     this._fileReader.readAsDataURL(files[0]);
   };
 
+  _renderContent = () => {
+    if (this.props.trackName) {
+      return (
+        <span className="DropTargetTrackName">{this.props.trackName}</span>
+      );
+    }
+
+    return (
+      <div className="DropTargetUpload">
+        <img src="/upload.png" alt="Upload a file" className="DropTargetUplaodLogo" />
+        DROP SONG TO UPLOAD
+      </div>
+    );
+  }
+
   render() {
     const classes = cx({
       DropTargetContainer: true,
@@ -51,7 +66,7 @@ class DropTarget extends Component {
         onDragEnter={this._noopHandler}
         onDragOver={this._noopHandler}
         onDrop={this._handleDrop}>
-        {this.props.trackName || 'Drop Song File'}
+        {this._renderContent()}
       </a>
     );
   }
