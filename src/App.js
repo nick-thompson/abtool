@@ -149,6 +149,7 @@ class App extends Component {
               trackName={this.state.leftFileName}
               onAudioReady={this._leftAudioReady} />
             <DropTarget
+              variant="B"
               trackName={this.state.rightFileName}
               onAudioReady={this._rightAudioReady} />
           </div>

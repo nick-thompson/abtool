@@ -12,3 +12,7 @@
 .DropTargetContainer:last-child {
   margin-right: 0;
 }
+
+.DropTargetBVariant {
+  background-image: url('/BBackground.png');
+}

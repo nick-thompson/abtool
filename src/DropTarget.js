@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import cx from 'classnames';
 import './DropTarget.css';
 
 class DropTarget extends Component {
@@ -36,9 +37,14 @@ class DropTarget extends Component {
   };
 
   render() {
+    const classes = cx({
+      DropTargetContainer: true,
+      DropTargetBVariant: this.props.variant === 'B',
+    });
+
     return (
       <div
-        className="DropTargetContainer"
+        className={classes}
         onDragEnter={this._noopHandler}
         onDragOver={this._noopHandler}
         onDrop={this._handleDrop}>

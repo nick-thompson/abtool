@@ -43,13 +43,13 @@
 
 .TransportProgressTrack {
   flex: 1;
-  background-color: #333;
+  background-color: #262626;
   border-radius: 7px;
   height: 14px;
 }
 
 .TransportProgressFill {
-  background-color: #999;
+  background-color: #e7e7df;
   border-radius: 7px;
   height: 14px;
   -webkit-transition: width 0.1s ease-in-out;
