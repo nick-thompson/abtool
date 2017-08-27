@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import cx from 'classnames';
 import './Transport.css';
 
 class Transport extends Component {
@@ -13,14 +14,26 @@ class Transport extends Component {
   };
 
   render() {
+    const playPauseClasses = cx({
+      TransportButton: true,
+      TransportPlay: !this.props.playing,
+      TransportPause: this.props.playing,
+    });
+
     return (
       <div className="TransportContainer">
-        <button className="TransportReset" onClick={this.props.onReset}>
-          Reset
-        </button>
-        <button className="TransportPlayPause" onClick={this.props.onPlayPause}>
-          Play/Pause
-        </button>
+        <div className="TransportButtonContainer">
+          <a
+            href="#"
+            className="TransportButton TransportReset"
+            onClick={this.props.onReset} />
+        </div>
+        <div className="TransportButtonContainer">
+          <a
+            href="#"
+            className={playPauseClasses}
+            onClick={this.props.onPlayPause} />
+        </div>
         <div className="TransportProgressTrack" onClick={this._handleProgressClick}>
           <div
             className="TransportProgressFill"

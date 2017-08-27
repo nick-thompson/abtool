@@ -56,8 +56,10 @@ class App extends Component {
       });
     }
 
+    const audio = leftAudio || rightAudio;
+
     this.setState({
-      transportProgress: leftAudio.currentTime / leftAudio.duration,
+      transportProgress: audio.currentTime / audio.duration,
     });
   };
 
@@ -80,7 +82,10 @@ class App extends Component {
     }
   };
 
-  _onPlayPause = () => {
+  _onPlayPause = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     const {leftAudio, rightAudio} = this.state;
 
     if (leftAudio === null && rightAudio === null) {
@@ -100,7 +105,10 @@ class App extends Component {
     });
   };
 
-  _onReset = () => {
+  _onReset = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     const {leftAudio, rightAudio} = this.state;
 
     if (leftAudio === null && rightAudio === null) {
@@ -108,9 +116,12 @@ class App extends Component {
     }
 
     if (this.state.playing) {
-      leftAudio.pause();
-      rightAudio.pause();
+      leftAudio && leftAudio.pause();
+      rightAudio && rightAudio.pause();
     }
+
+    leftAudio && (leftAudio.currentTime = 0);
+    rightAudio && (rightAudio.currentTime = 0);
 
     this.setState({
       playing: false,

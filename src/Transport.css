@@ -1,11 +1,40 @@
 .TransportContainer {
   display: flex;
+  align-items: center;
   width: 100%;
 }
 
-.TransportReset,
-.TransportPlayPause {
+.TransportButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  margin: 0;
   flex: 0;
+}
+
+.TransportButton {
+  background-position: center center;
+  background-size: cover;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  background-color: transparent;
+  outline: 0;
+}
+
+.TransportReset {
+  background-image: url('/Rewind.png');
+}
+
+.TransportPlay {
+  background-image: url('/Play.png');
+}
+
+.TransportPause {
+  background-image: url('/Pause.png');
 }
 
 .TransportProgressTrack {
