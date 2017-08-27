@@ -1,7 +1,9 @@
 .DropTargetContainer {
-  background-color: #eaeaea;
-  width: 200px;
-  height: 200px;
+  background-image: url('/ABackground.png');
+  background-size: cover;
+  background-position: center center;
+  width: 426px;
+  height: 149px;
   margin-right: 8px;
   margin-bottom: 8px;
 }
