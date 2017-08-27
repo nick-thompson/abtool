@@ -9,6 +9,8 @@ class App extends Component {
     super(props);
 
     this.state = {
+      leftSelected: false,
+      rightSelected: false,
       leftFileName: '',
       leftAudio: null,
       rightFileName: '',
@@ -64,6 +66,42 @@ class App extends Component {
 
     this.setState({
       transportProgress: audio.currentTime / audio.duration,
+    });
+  };
+
+  _handleSelectLeft = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const {leftAudio, rightAudio} = this.state;
+
+    if (rightAudio)
+      rightAudio.muted = true;
+
+    if (leftAudio)
+      leftAudio.muted = false;
+
+    this.setState({
+      leftSelected: true,
+      rightSelected: false,
+    });
+  };
+
+  _handleSelectRight = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const {leftAudio, rightAudio} = this.state;
+
+    if (rightAudio)
+      rightAudio.muted = false;
+
+    if (leftAudio)
+      leftAudio.muted = true;
+
+    this.setState({
+      leftSelected: false,
+      rightSelected: true,
     });
   };
 
@@ -154,10 +192,14 @@ class App extends Component {
           </div>
           <div className="DropCellContainer">
             <DropTarget
+              selected={this.state.leftSelected}
+              onClick={this._handleSelectLeft}
               trackName={this.state.leftFileName}
               onAudioReady={this._leftAudioReady} />
             <DropTarget
               variant="B"
+              selected={this.state.rightSelected}
+              onClick={this._handleSelectRight}
               trackName={this.state.rightFileName}
               onAudioReady={this._rightAudioReady} />
           </div>

@@ -39,17 +39,20 @@ class DropTarget extends Component {
   render() {
     const classes = cx({
       DropTargetContainer: true,
+      DropTargetContainerSelected: this.props.selected,
       DropTargetBVariant: this.props.variant === 'B',
     });
 
     return (
-      <div
+      <a
+        href="#"
         className={classes}
+        onClick={this.props.onClick}
         onDragEnter={this._noopHandler}
         onDragOver={this._noopHandler}
         onDrop={this._handleDrop}>
         {this.props.trackName || 'Drop Song File'}
-      </div>
+      </a>
     );
   }
 }
