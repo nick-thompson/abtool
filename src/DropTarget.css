@@ -13,6 +13,7 @@
   text-decoration: none;
   border: 4px solid transparent;
   box-sizing: border-box;
+  box-shadow: -10px 0px 12.3px 2.7px rgba(1, 1, 1, 0.16);
 }
 
 .DropTargetContainer:hover,
