@@ -1,0 +1,19 @@
+.TransportContainer {
+  display: flex;
+}
+
+.TransportReset,
+.TransportPlayPause {
+  flex: 0;
+}
+
+.TransportProgressTrack {
+  flex: 1;
+  background-color: #333;
+  height: 40px;
+}
+
+.TransportProgressFill {
+  background-color: #999;
+  height: 40px;
+}

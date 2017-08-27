@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Transport from './Transport';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -13,6 +15,10 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Transport
+          onReset={() => {}}
+          onPlayPause={() => {}}
+          fillAmount={0.5} />
       </div>
     );
   }
