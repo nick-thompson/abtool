@@ -221,14 +221,24 @@ class App extends Component {
         <div className="AppFooter">
           <div className="AppFooterAd AppBnceAd">
             <a href="http://www.bnceplatform.com" className="AppFooterText" target="_blank">
-              <h2 className="HeaderNoMargin">BNCE Platform</h2>
-              <h5 className="HeaderNoMargin">Designed for music creators.</h5>
+              <div className="AppFooterAdText">
+                <h2 className="HeaderNoMargin">BNCE Platform</h2>
+                <h5 className="HeaderNoMargin">Designed for music creators.</h5>
+              </div>
+              <div className="AppFooterArrowContainer">
+                <img src="/arrow-red.png" className="AppFooterArrow" />
+              </div>
             </a>
           </div>
           <div className="AppFooterAd AppCIAd">
             <a href="https://creativeintent.co/products/temper" className="AppFooterText AppFooterInvertedText" target="_blank">
-              <h2 className="HeaderNoMargin">Temper</h2>
-              <h5 className="HeaderNoMargin">New Phase Distortion Plugin</h5>
+              <div className="AppFooterAdText">
+                <h2 className="HeaderNoMargin">Temper</h2>
+                <h5 className="HeaderNoMargin">New Phase Distortion Plugin</h5>
+              </div>
+              <div className="AppFooterArrowContainer">
+                <img src="/arrow-white.png" className="AppFooterArrow" />
+              </div>
             </a>
           </div>
         </div>
