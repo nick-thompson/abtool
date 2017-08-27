@@ -14,10 +14,17 @@ class App extends Component {
       rightFileName: '',
       rightAudio: null,
       transportProgress: 0,
+      playing: false,
     };
   }
 
   _leftAudioReady = (name, audio) => {
+    if (this.state.leftAudio) {
+      this.state.leftAudio.removeEventListener('timeupdate');
+    }
+
+    audio.addEventListener('timeupdate', this._onTimeUpdate);
+
     this.setState({
       leftFileName: name,
       leftAudio: audio,
@@ -25,10 +32,50 @@ class App extends Component {
   };
 
   _rightAudioReady = (name, audio) => {
+    if (this.state.rightAudio) {
+      this.state.rightAudio.removeEventListener('timeupdate');
+    }
+
+    audio.addEventListener('timeupdate', this._onTimeUpdate);
+
     this.setState({
       rightFileName: name,
       rightAudio: audio,
     });
+  };
+
+  _onTimeUpdate = () => {
+    const {leftAudio, rightAudio} = this.state;
+    const shouldSkip = leftAudio !== null &&
+      rightAudio !== null &&
+      leftAudio.duration !== rightAudio.duration;
+
+    if (shouldSkip) {
+      return this.setState({
+        transportProgress: 0,
+      });
+    }
+
+    this.setState({
+      transportProgress: leftAudio.currentTime / leftAudio.duration,
+    });
+  };
+
+  _onPlayPause = () => {
+    if (this.state.playing) {
+      this.state.leftAudio.pause();
+      this.state.rightAudio.pause();
+    } else {
+      this.state.leftAudio.play();
+      this.state.rightAudio.play();
+    }
+
+    this.setState({
+      playing: !this.state.playing,
+    });
+  };
+
+  _onReset = () => {
   };
 
   render() {
@@ -44,9 +91,10 @@ class App extends Component {
               onAudioReady={this._rightAudioReady} />
           </div>
           <Transport
-            onReset={() => {}}
-            onPlayPause={() => {}}
-            fillAmount={0.5} />
+            playing={this.state.playing}
+            onReset={this._onReset}
+            onPlayPause={this._onPlayPause}
+            fillAmount={this.state.transportProgress} />
         </div>
       </div>
     );
