@@ -23,16 +23,16 @@ class Transport extends Component {
     return (
       <div className="TransportContainer">
         <div className="TransportButtonContainer">
-          <a
-            href="#"
+          <button
             className="TransportButton TransportReset"
-            onClick={this.props.onReset} />
+            onClick={this.props.onReset}>
+          </button>
         </div>
         <div className="TransportButtonContainer">
-          <a
-            href="#"
+          <button
             className={playPauseClasses}
-            onClick={this.props.onPlayPause} />
+            onClick={this.props.onPlayPause}>
+          </button>
         </div>
         <div className="TransportProgressTrack" onClick={this._handleProgressClick}>
           <div

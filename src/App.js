@@ -21,9 +21,11 @@ class App extends Component {
   _leftAudioReady = (name, audio) => {
     if (this.state.leftAudio) {
       this.state.leftAudio.removeEventListener('timeupdate');
+      this.state.leftAudio.removeEventListener('ended');
     }
 
     audio.addEventListener('timeupdate', this._onTimeUpdate);
+    audio.addEventListener('ended', this._onReset);
 
     this.setState({
       leftFileName: name,
@@ -34,9 +36,11 @@ class App extends Component {
   _rightAudioReady = (name, audio) => {
     if (this.state.rightAudio) {
       this.state.rightAudio.removeEventListener('timeupdate');
+      this.state.rightAudio.removeEventListener('ended');
     }
 
     audio.addEventListener('timeupdate', this._onTimeUpdate);
+    audio.addEventListener('ended', this._onReset);
 
     this.setState({
       rightFileName: name,
@@ -73,8 +77,8 @@ class App extends Component {
       const duration = leftAudio.duration;
       const seekPoint = amt * duration;
 
-      leftAudio.currentTime = seekPoint;
-      rightAudio.currentTime = seekPoint;
+      leftAudio && (leftAudio.currentTime = seekPoint);
+      rightAudio && (rightAudio.currentTime = seekPoint);
 
       this.setState({
         transportProgress: amt,

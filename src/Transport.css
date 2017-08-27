@@ -11,7 +11,7 @@
   width: 52px;
   height: 52px;
   padding: 0;
-  margin: 0;
+  margin-right: 8px;
   flex: 0;
 }
 
@@ -23,6 +23,10 @@
   border: 0;
   background-color: transparent;
   outline: 0;
+}
+
+.TransportButton:hover {
+  cursor: pointer;
 }
 
 .TransportReset {
@@ -40,10 +44,16 @@
 .TransportProgressTrack {
   flex: 1;
   background-color: #333;
-  height: 40px;
+  border-radius: 7px;
+  height: 14px;
 }
 
 .TransportProgressFill {
   background-color: #999;
-  height: 40px;
+  border-radius: 7px;
+  height: 14px;
+  -webkit-transition: width 0.1s ease-in-out;
+  -moz-transition: width 0.1s ease-in-out;
+  -o-transition: width 0.1s ease-in-out;
+  transition: width 0.1s ease-in-out;
 }
