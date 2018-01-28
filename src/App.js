@@ -189,11 +189,11 @@ class App extends Component {
             <source src="grid_video.mp4" type="video/mp4" />
           </video>
           <div className="App__MainContainer">
-            <div className="TextContainer">
-              <h1 className="HeaderNoMargin">Online Audio</h1>
-              <h1 className="HeaderNoMargin">A|B Reference Tool</h1>
-              <p className="TextBody">
-                A/B referencing plays an essential part in production, mixing and mastering, BNCE offers a faster, easier and more accurate method to compare multiple audio files.
+            <div className="App_TextContainer">
+              <h1 className="App_HeaderNoMargin">Online Audio</h1>
+              <h1 className="App_HeaderNoMargin App__Header-Teal">A/B Mix Referencer</h1>
+              <p className="App_TextBody">
+                A/B referencing plays an essential part in production, mixing and mastering process. The A/B Referencer offers a faster, easy method to compare multiple audio files on the fly. Check your mix for dynamics, compare your samples to mixes you like or just compare two versions of the same mix to get an idea of whether changes you have made were beneficial to the mix. Lots of uses for this tool, and it’s free! Drop your files into each bin and switch between the two to listen.
               </p>
             </div>
             <div className="DropCellContainer">

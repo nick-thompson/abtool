@@ -38,22 +38,19 @@
   z-index: 1;
 }
 
-.HeaderNoMargin {
+.App__HeaderNoMargin {
   margin: 0;
   margin-bottom: 8px;
 }
 
-.TextBody {
-  max-width: 50%;
+.App__Header-Teal {
+  color: #2cc5b3;
+}
+
+.App__TextBody {
   font-size: 18px;
   line-height: 1.4;
   margin-bottom: 40px;
-}
-
-@media (max-width: 768px) {
-  .TextBody {
-    max-width: 100%;
-  }
 }
 
 .DropCellContainer {
