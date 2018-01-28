@@ -195,7 +195,7 @@ class App extends Component {
             <h1 className="HeaderNoMargin">Online Audio</h1>
             <h1 className="HeaderNoMargin">A|B Reference Tool</h1>
             <p className="TextBody">
-              A/B referencing plays an essential part in production, mixing and mastering, BNCE offers a faster, easier and more accurate method to compare multiple audio files. 
+              A/B referencing plays an essential part in production, mixing and mastering, BNCE offers a faster, easier and more accurate method to compare multiple audio files.
             </p>
           </div>
           <div className="DropCellContainer">
@@ -219,27 +219,11 @@ class App extends Component {
             fillAmount={this.state.transportProgress} />
         </div>
         <div className="AppFooter">
-          <div className="AppFooterAd AppBnceAd">
-            <a href="http://www.bnceplatform.com" className="AppFooterText" target="_blank">
-              <div className="AppFooterAdText">
-                <h2 className="HeaderNoMargin">BNCE Platform</h2>
-                <h5 className="HeaderNoMargin">Designed for music creators.</h5>
-              </div>
-              <div className="AppFooterArrowContainer">
-                <img src="/arrow-red.png" className="AppFooterArrow" />
-              </div>
-            </a>
+          <div className="AppFooter__Credit">
+            Designed by <a href="https://seizedigital.com/" target="_blank" className="AppFooter__Link">Seize Digital</a>
           </div>
-          <div className="AppFooterAd AppCIAd">
-            <a href="https://creativeintent.co/products/temper" className="AppFooterText AppFooterInvertedText" target="_blank">
-              <div className="AppFooterAdText">
-                <h2 className="HeaderNoMargin">Temper</h2>
-                <h5 className="HeaderNoMargin">New Phase Distortion Plugin</h5>
-              </div>
-              <div className="AppFooterArrowContainer">
-                <img src="/arrow-white.png" className="AppFooterArrow" />
-              </div>
-            </a>
+          <div className="AppFooter__Credit">
+            Developed by <a href="https://creativeintent.co/" target="_blank" className="AppFooter__Link">Creative Intent</a>
           </div>
         </div>
       </div>
