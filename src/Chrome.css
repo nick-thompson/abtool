@@ -14,6 +14,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgba(18, 18, 18, 0.96);
+  z-index: 99;
 }
 
 @media (min-width: 1200px) {
