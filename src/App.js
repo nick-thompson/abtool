@@ -1,3 +1,4 @@
+import Chrome from './Chrome';
 import DropTarget from './DropTarget';
 import React, { Component } from 'react';
 import Transport from './Transport';
@@ -181,15 +182,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="AppHeader">
-          <a href="/">
-            <img className="AppLogo" src="/logo.png" alt="BNCE Platform" />
-          </a>
-          <a className="AppLaunch" href="http://www.bnceplatform.com">
-            Launch with us
-          </a>
-        </div>
+      <Chrome>
         <div className="MainContainer">
           <div className="TextContainer">
             <h1 className="HeaderNoMargin">Online Audio</h1>
@@ -218,15 +211,7 @@ class App extends Component {
             onPlayPause={this._onPlayPause}
             fillAmount={this.state.transportProgress} />
         </div>
-        <div className="AppFooter">
-          <div className="AppFooter__Credit">
-            Designed by <a href="https://seizedigital.com/" target="_blank" className="AppFooter__Link">Seize Digital</a>
-          </div>
-          <div className="AppFooter__Credit">
-            Developed by <a href="https://creativeintent.co/" target="_blank" className="AppFooter__Link">Creative Intent</a>
-          </div>
-        </div>
-      </div>
+      </Chrome>
     );
   }
 }
