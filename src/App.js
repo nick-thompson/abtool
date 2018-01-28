@@ -184,38 +184,38 @@ class App extends Component {
     return (
       <Chrome>
         <div className="App_HeroContainer">
-          <video playsInline autoPlay muted loop poster="polina.jpg" className="App__HeroVideo" id="bgvid">
+          <video playsInline autoPlay muted loop poster="grid_video_cover.jpg" className="App__HeroVideo" id="bgvid">
             <source src="grid_video.webm" type="video/webm" />
             <source src="grid_video.mp4" type="video/mp4" />
           </video>
-        </div>
-        <div className="MainContainer">
-          <div className="TextContainer">
-            <h1 className="HeaderNoMargin">Online Audio</h1>
-            <h1 className="HeaderNoMargin">A|B Reference Tool</h1>
-            <p className="TextBody">
-              A/B referencing plays an essential part in production, mixing and mastering, BNCE offers a faster, easier and more accurate method to compare multiple audio files.
-            </p>
+          <div className="App__MainContainer">
+            <div className="TextContainer">
+              <h1 className="HeaderNoMargin">Online Audio</h1>
+              <h1 className="HeaderNoMargin">A|B Reference Tool</h1>
+              <p className="TextBody">
+                A/B referencing plays an essential part in production, mixing and mastering, BNCE offers a faster, easier and more accurate method to compare multiple audio files.
+              </p>
+            </div>
+            <div className="DropCellContainer">
+              <DropTarget
+                selected={this.state.leftSelected}
+                onClick={this._handleSelectLeft}
+                trackName={this.state.leftFileName}
+                onAudioReady={this._leftAudioReady} />
+              <DropTarget
+                variant="B"
+                selected={this.state.rightSelected}
+                onClick={this._handleSelectRight}
+                trackName={this.state.rightFileName}
+                onAudioReady={this._rightAudioReady} />
+            </div>
+            <Transport
+              playing={this.state.playing}
+              onSeek={this._onSeek}
+              onReset={this._onReset}
+              onPlayPause={this._onPlayPause}
+              fillAmount={this.state.transportProgress} />
           </div>
-          <div className="DropCellContainer">
-            <DropTarget
-              selected={this.state.leftSelected}
-              onClick={this._handleSelectLeft}
-              trackName={this.state.leftFileName}
-              onAudioReady={this._leftAudioReady} />
-            <DropTarget
-              variant="B"
-              selected={this.state.rightSelected}
-              onClick={this._handleSelectRight}
-              trackName={this.state.rightFileName}
-              onAudioReady={this._rightAudioReady} />
-          </div>
-          <Transport
-            playing={this.state.playing}
-            onSeek={this._onSeek}
-            onReset={this._onReset}
-            onPlayPause={this._onPlayPause}
-            fillAmount={this.state.transportProgress} />
         </div>
       </Chrome>
     );
