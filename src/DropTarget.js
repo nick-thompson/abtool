@@ -8,9 +8,17 @@ class DropTarget extends Component {
     super(props);
 
     this._fileReader = new FileReader();
+
+    this.state = {
+      loading: false,
+    };
   }
 
   _onFileRead = (file, e) => {
+    window.setTimeout(() => {
+      this.setState({loading: false});
+    }, 2000);
+
     const audio = new Audio();
 
     audio.src = e.target.result;
@@ -29,6 +37,8 @@ class DropTarget extends Component {
     e.preventDefault();
     e.stopPropagation();
 
+    this.setState({loading: true});
+
     const files = e.dataTransfer.files;
     const file = files[0];
 
@@ -37,6 +47,14 @@ class DropTarget extends Component {
   };
 
   _renderContent = () => {
+    if (this.state.loading) {
+      return (
+        <div className="DropTargetUpload">
+          <img src="/abtool_spinner.gif" alt="Loading..." className="DropTargetUplaodLogo" />
+        </div>
+      );
+    }
+
     if (this.props.trackName) {
       return (
         <span className="DropTargetTrackName">{this.props.trackName}</span>
@@ -45,8 +63,7 @@ class DropTarget extends Component {
 
     return (
       <div className="DropTargetUpload">
-        <img src="/upload.png" alt="Upload a file" className="DropTargetUplaodLogo" />
-        DROP SONG TO UPLOAD
+        <img src="/abtool_upload.png" alt="Upload a file" className="DropTargetUplaodLogo" />
       </div>
     );
   }
@@ -55,7 +72,6 @@ class DropTarget extends Component {
     const classes = cx({
       DropTargetContainer: true,
       DropTargetContainerSelected: this.props.selected,
-      DropTargetBVariant: this.props.variant === 'B',
     });
 
     return (
