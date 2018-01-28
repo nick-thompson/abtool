@@ -40,7 +40,7 @@
 
 .App__HeaderNoMargin {
   margin: 0;
-  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .App__Header-Teal {
