@@ -93,8 +93,7 @@ class DropTarget extends Component {
   render() {
     const classes = cx({
       DropTargetContainer: true,
-      DropTargetContainerSelected: this.props.selected,
-      DropTargetContainerHover: this.state.dropHover,
+      DropTargetContainerHover: this.state.dropHover || (this.props.selected && !this.state.loading),
     });
 
     return (
