@@ -23,8 +23,8 @@ class App extends Component {
 
   _leftAudioReady = (name, audio) => {
     if (this.state.leftAudio) {
-      this.state.leftAudio.removeEventListener('timeupdate');
-      this.state.leftAudio.removeEventListener('ended');
+      this.state.leftAudio.removeEventListener('timeupdate', this._onTimeUpdate);
+      this.state.leftAudio.removeEventListener('ended', this._onReset);
     }
 
     audio.addEventListener('timeupdate', this._onTimeUpdate);
@@ -42,8 +42,8 @@ class App extends Component {
 
   _rightAudioReady = (name, audio) => {
     if (this.state.rightAudio) {
-      this.state.rightAudio.removeEventListener('timeupdate');
-      this.state.rightAudio.removeEventListener('ended');
+      this.state.rightAudio.removeEventListener('timeupdate', this._onTimeUpdate);
+      this.state.rightAudio.removeEventListener('ended', this._onReset);
     }
 
     audio.addEventListener('timeupdate', this._onTimeUpdate);
