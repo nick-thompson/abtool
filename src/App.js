@@ -36,7 +36,6 @@ class App extends Component {
     this.setState({
       leftFileName: name,
       leftAudio: audio,
-      leftSelected: true,
     });
   };
 
@@ -55,7 +54,6 @@ class App extends Component {
     this.setState({
       rightFileName: name,
       rightAudio: audio,
-      rightSelected: true,
     });
   };
 
