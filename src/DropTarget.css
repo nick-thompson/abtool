@@ -16,6 +16,10 @@
   margin-right: 0;
 }
 
+.DropTargetContainerHover {
+  background-color: rgba(44, 198, 180, 0.3);
+}
+
 .DropTargetUpload {
   display: flex;
   flex-direction: column;

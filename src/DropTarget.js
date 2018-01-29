@@ -11,7 +11,26 @@ class DropTarget extends Component {
 
     this.state = {
       loading: false,
+      dropHover: false,
     };
+  }
+
+  _onDragEnter = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.setState({
+      dropHover: true,
+    });
+  }
+
+  _onDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.setState({
+      dropHover: false,
+    });
   }
 
   _onFileRead = (file, e) => {
@@ -37,7 +56,10 @@ class DropTarget extends Component {
     e.preventDefault();
     e.stopPropagation();
 
-    this.setState({loading: true});
+    this.setState({
+      loading: true,
+      dropHover: false,
+    });
 
     const files = e.dataTransfer.files;
     const file = files[0];
@@ -72,6 +94,7 @@ class DropTarget extends Component {
     const classes = cx({
       DropTargetContainer: true,
       DropTargetContainerSelected: this.props.selected,
+      DropTargetContainerHover: this.state.dropHover,
     });
 
     return (
@@ -79,8 +102,9 @@ class DropTarget extends Component {
         href="#"
         className={classes}
         onClick={this.props.onClick}
-        onDragEnter={this._noopHandler}
-        onDragOver={this._noopHandler}
+        onDragEnter={this._onDragEnter}
+        onDragOver={this._onDragEnter}
+        onDragLeave={this._onDragLeave}
         onDrop={this._handleDrop}>
         {this._renderContent()}
       </a>
