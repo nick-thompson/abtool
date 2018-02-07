@@ -1,19 +1,24 @@
 .DropTargetContainer {
   display: flex;
-  background-color: #121212;
   flex: 1;
   align-items: center;
   justify-content: center;
   color: #fdfdfd;
-  height: 149px;
-  margin-right: 8px;
+  padding: 24px 0;
+  margin-right: 0;
   margin-bottom: 16px;
   text-decoration: none;
   border: 1px solid #2cc5b3;
 }
 
-.DropTargetContainer:last-child {
-  margin-right: 0;
+@media (min-width: 768px) {
+  .DropTargetContainer {
+    margin-right: 6%;
+  }
+
+  .DropTargetContainer:last-child {
+    margin-right: 0;
+  }
 }
 
 .DropTargetContainerHover {

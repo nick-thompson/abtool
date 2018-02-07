@@ -55,5 +55,14 @@
 
 .DropCellContainer {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
+
+@media (min-width: 768px) {
+  .DropCellContainer {
+    flex-direction: row;
+    width: 78%;
+  }
+}
+
