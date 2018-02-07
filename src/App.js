@@ -1,5 +1,6 @@
 import Chrome from './Chrome';
 import DropTarget from './DropTarget';
+import Newsletter from './Newsletter';
 import React, { Component } from 'react';
 import Transport from './Transport';
 
@@ -214,6 +215,9 @@ class App extends Component {
               onPlayPause={this._onPlayPause}
               fillAmount={this.state.transportProgress} />
           </div>
+        </div>
+        <div className="App_NewsletterContainer">
+          <Newsletter />
         </div>
       </Chrome>
     );

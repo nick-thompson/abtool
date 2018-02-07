@@ -1,0 +1,15 @@
+.Newsletter__TextInput {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fdfdfd;
+  color: #121212;
+  border: 1px solid #4b4b4f;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.Newsletter__TextInput:focus {
+  outline: 0;
+}
