@@ -4,8 +4,9 @@ import './Split.css';
 
 class Split extends Component {
   render() {
+    const classes = `Split ${this.props.className || ''}`;
     return (
-      <div className="Split">
+      <div className={classes}>
         {this.props.children}
       </div>
     );
@@ -14,8 +15,9 @@ class Split extends Component {
 
 export class SplitCell extends Component {
   render() {
+    const classes = `Split__SplitCell ${this.props.className || ''}`;
     return (
-      <div className="Split__SplitCell">
+      <div className={classes}>
         {this.props.children}
       </div>
     );

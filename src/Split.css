@@ -4,12 +4,25 @@
 }
 
 .Split__SplitCell {
+  display: flex;
   flex: 1;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Split__SplitCell:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
   .Split {
     display: flex;
     flex-direction: row;
+  }
+
+  .Split__SplitCell {
+    flex: 1;
+    margin-bottom: 0;
   }
 }

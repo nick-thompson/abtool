@@ -3,7 +3,6 @@ import Chrome from './Chrome';
 import DropTarget from './DropTarget';
 import Newsletter from './Newsletter';
 import React, { Component } from 'react';
-import Split, { SplitCell } from './Split';
 import Transport from './Transport';
 
 import './App.css';
@@ -220,14 +219,7 @@ class App extends Component {
         </div>
         <div className="App__Section App__Section-Elevated">
           <Container>
-            <Split>
-              <SplitCell>
-                Get updates on new audio tools, audio plugins, and more.
-              </SplitCell>
-              <SplitCell>
-                <Newsletter />
-              </SplitCell>
-            </Split>
+            <Newsletter />
           </Container>
         </div>
         <div className="App__Section">
