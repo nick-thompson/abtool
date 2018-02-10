@@ -1,0 +1,15 @@
+.Split {
+  display: flex;
+  flex-direction: column;
+}
+
+.Split__SplitCell {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .Split {
+    display: flex;
+    flex-direction: row;
+  }
+}

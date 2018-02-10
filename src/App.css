@@ -66,14 +66,14 @@
   }
 }
 
-.App_NewsletterContainer {
+.App__Section {
   width: 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 90px 0;
-  background-color: #121212;
+}
+
+.App__Section-Elevated {
+  background-color: #1b2e2c;
   box-shadow: 0px 0px 20px #000000;
-  z-index: 1;
+  z-index: 2;
 }

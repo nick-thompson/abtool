@@ -1,7 +1,9 @@
+import Container from './Container';
 import Chrome from './Chrome';
 import DropTarget from './DropTarget';
 import Newsletter from './Newsletter';
 import React, { Component } from 'react';
+import Split, { SplitCell } from './Split';
 import Transport from './Transport';
 
 import './App.css';
@@ -216,7 +218,19 @@ class App extends Component {
               fillAmount={this.state.transportProgress} />
           </div>
         </div>
-        <div className="App_NewsletterContainer">
+        <div className="App__Section App__Section-Elevated">
+          <Container>
+            <Split>
+              <SplitCell>
+                Get updates on new audio tools, audio plugins, and more.
+              </SplitCell>
+              <SplitCell>
+                <Newsletter />
+              </SplitCell>
+            </Split>
+          </Container>
+        </div>
+        <div className="App__Section">
           <Newsletter />
         </div>
       </Chrome>
