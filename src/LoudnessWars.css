@@ -1,0 +1,13 @@
+.LoudnessWars__Graph {
+  width: 80%;
+}
+
+.LoudnessWars__Quote {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.LoudnessWars__Title,
+.LoudnessWars__Attr {
+  text-transform: uppercase;
+}

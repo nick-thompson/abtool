@@ -1,6 +1,7 @@
 import Container from './Container';
 import Chrome from './Chrome';
 import DropTarget from './DropTarget';
+import LoudnessWars from './LoudnessWars';
 import Newsletter from './Newsletter';
 import React, { Component } from 'react';
 import Transport from './Transport';
@@ -223,7 +224,9 @@ class App extends Component {
           </Container>
         </div>
         <div className="App__Section">
-          <Newsletter />
+          <Container>
+            <LoudnessWars />
+          </Container>
         </div>
       </Chrome>
     );
