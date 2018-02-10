@@ -68,6 +68,38 @@ class DropTarget extends Component {
     this._fileReader.readAsDataURL(files[0]);
   };
 
+  _handleClick = (e) => {
+    const hasTrack = typeof this.props.trackName === 'string' &&
+      this.props.trackName.length > 0;
+
+    // Force file dialog open
+    if (!hasTrack) {
+      const input = document.createElement('input');
+
+      input.type = 'file';
+      input.addEventListener('change', (fileEvent) => {
+        if (input.files.length > 0) {
+          const file = input.files[0];
+
+          this.setState({ loading: true });
+
+          this._fileReader.onload = this._onFileRead.bind(this, file);
+          this._fileReader.readAsDataURL(file);
+        }
+      });
+
+      input.dispatchEvent(new MouseEvent('click'));
+
+      // Don't fall into the onClick handler below if we've just gone through
+      // the file dialog flow.
+      return void 0;
+    }
+
+    if (typeof this.props.onClick === 'function') {
+      this.props.onClick(e);
+    }
+  };
+
   _renderContent = () => {
     if (this.state.loading) {
       return (
@@ -97,16 +129,15 @@ class DropTarget extends Component {
     });
 
     return (
-      <a
-        href="#"
+      <button
         className={classes}
-        onClick={this.props.onClick}
+        onClick={this._handleClick}
         onDragEnter={this._onDragEnter}
         onDragOver={this._onDragEnter}
         onDragLeave={this._onDragLeave}
         onDrop={this._handleDrop}>
         {this._renderContent()}
-      </a>
+      </button>
     );
   }
 }

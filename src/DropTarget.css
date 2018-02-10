@@ -9,6 +9,8 @@
   margin-bottom: 16px;
   text-decoration: none;
   border: 1px solid #2cc5b3;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
